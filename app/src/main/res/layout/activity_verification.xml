@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/app_background"
     tools:context=".VerificationActivity">
 
     <com.google.android.material.card.MaterialCardView
@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        app:strokeColor="#D0D0D0"
+        app:strokeColor="@color/border_color"
         app:strokeWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,10 +31,14 @@
             android:padding="36dp">
 
             <!-- Logo -->
-            <ImageView
+            <com.xsi.inventory.XaveryLogoImageView
+                android:id="@+id/xaveryLogo"
                 android:layout_width="52dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Xavery Logo"
                 android:scaleType="fitCenter"
                 android:src="@drawable/xavery_logo" />
@@ -46,7 +50,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:text="Verify Your Account"
-                android:textColor="#222222"
+                android:textColor="@color/text_primary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -57,7 +61,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Enter the verification code sent to your email address."
-                android:textColor="#666666"
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
             <!-- Code Label -->
@@ -66,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="Verification Code"
-                android:textColor="#555555"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <!-- Code Input -->
@@ -80,8 +84,8 @@
                 android:hint="Enter 6-digit code"
                 android:inputType="number"
                 android:maxLength="6"
-                android:textColor="#222222"
-                android:textColorHint="#999999"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
                 android:textSize="16sp" />
 
             <!-- Verify Button -->
@@ -91,9 +95,10 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/login_button_background"
+                app:backgroundTint="@null"
                 android:text="Verify Code"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/button_text_color"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/app_background"
     tools:context=".MainActivity">
 
     <!-- Main Login Card -->
@@ -14,12 +12,12 @@
         android:id="@+id/loginCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        app:cardBackgroundColor="#FFFFFF"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        app:strokeColor="#D0D0D0"
+        app:strokeColor="@color/border_color"
         app:strokeWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,102 +28,111 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="40dp"
-            android:paddingTop="36dp"
-            android:paddingEnd="40dp"
-            android:paddingBottom="36dp">
+            android:paddingStart="24dp"
+            android:paddingTop="28dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="28dp">
 
-            <!-- Logo and App Name -->
-            <LinearLayout
+            <!-- Xavery Logo -->
+            <com.xsi.inventory.XaveryLogoImageView
+                android:id="@+id/xaveryLogo"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="Xavery Logo"
+                android:focusable="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/xavery_logo" />
+
+            <!-- Category Subtitle -->
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginTop="20dp"
+                android:letterSpacing="0.05"
+                android:text="MOTORCYCLE PARTS INVENTORY"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-                <!-- Xavery Logo -->
-                <ImageView
-                    android:id="@+id/xaveryLogo"
-                    android:layout_width="52dp"
-                    android:layout_height="40dp"
-                    android:contentDescription="Xavery Logo"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/xavery_logo" />
+            <!-- Title: Xavery -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:includeFontPadding="false"
+                android:text="Xavery"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
-                <!-- App Name -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="SmartInventory"
-                    android:textColor="#B22222"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
+            <!-- Title: SmartInventory -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="SmartInventory"
+                android:textColor="#C83232"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
             <!-- Subtitle -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="Sign in to your account"
-                android:textColor="#666666"
+                android:layout_marginTop="8dp"
+                android:text="Sign in to manage your stock."
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
-
 
             <!-- Email Label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="38dp"
-                android:text="Email Address"
-                android:textColor="#555555"
-                android:textSize="12sp" />
+                android:layout_marginTop="22dp"
+                android:text="Email"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
-
-            <!-- Email -->
+            <!-- Email Input -->
             <EditText
                 android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/edit_text_background"
-                android:hint=""
                 android:inputType="textEmailAddress"
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
-                android:textColor="#222222"
-                android:textColorHint="#999999"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
                 android:textSize="14sp" />
-
 
             <!-- Password Label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="16dp"
                 android:text="Password"
-                android:textColor="#555555"
-                android:textSize="12sp" />
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
-
-            <!-- Password -->
+            <!-- Password Input -->
             <EditText
                 android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/edit_text_background"
-                android:hint=""
                 android:inputType="textPassword"
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
-                android:textColor="#222222"
-                android:textColorHint="#999999"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
                 android:textSize="14sp" />
-
 
             <!-- Forgot Password -->
             <TextView
@@ -133,36 +140,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
+                android:background="?attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
                 android:text="Forgot Password?"
-                android:textColor="#1E67A9"
-                android:textSize="12sp" />
-
+                android:textColor="#1D64B2"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <!-- Sign In Button -->
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="55dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/login_button_background"
+                app:backgroundTint="@null"
                 android:text="Sign in"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textColor="@color/button_text_color"
+                android:textSize="15sp"
                 android:textStyle="bold" />
-
 
             <!-- Register Section -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="28dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -170,19 +176,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Don't have an account?"
-                    android:textColor="#777777"
-                    android:textSize="11sp" />
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/registerText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
+                    android:layout_marginStart="6dp"
+                    android:background="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="Register"
-                    android:textColor="#1E67A9"
-                    android:textSize="11sp" />
+                    android:textColor="#1D64B2"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

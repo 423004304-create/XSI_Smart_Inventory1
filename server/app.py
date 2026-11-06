@@ -5,8 +5,17 @@ import os
 app = Flask(__name__)
 
 # Load your newly trained Xavery model weights
-model_path = os.path.join('models', 'best.pt')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, 'models', 'best.pt')
 model = YOLO(model_path)
+
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({
+        "status": "Xavery SmartInventory AI Server is running",
+        "model_loaded": True,
+        "classes": model.names
+    })
 
 @app.route('/predict', methods=['POST'])
 @app.route('/detect', methods=['POST'])

@@ -1,0 +1,22 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isCatalogAdmin() {
+      return signedIn()
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role
+          in ['Project Admin', 'Admin', 'Project Administrator', 'Administrator'];
+    }
+
+    match /product-images/{path=**} {
+      allow read: if signedIn();
+      allow create, update: if isCatalogAdmin()
+        && request.resource.size < 15 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if isCatalogAdmin();
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xavery SmartInventory</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="stickers.css">
+</head>
+<body>
+<div id="loginScreen" class="login-wrap">
+  <div class="login-card">
+    <img class="brand-mark" src="xavery_logo.jpg" alt="Xavery logo"><p class="eyebrow">MOTORCYCLE PARTS INVENTORY</p>
+    <h1>Xavery <span>SmartInventory</span></h1>
+    <p class="muted">Sign in to manage your stock.</p>
+    <form id="loginForm">
+      <label>Email<input id="loginEmail" type="email" required placeholder="name@example.com" autocomplete="username"></label>
+      <label>Password<input id="loginPassword" type="password" required placeholder="Enter password" autocomplete="current-password"></label>
+      <div class="login-forgot"><button id="forgotPasswordBtn" class="text-link" type="button">Forgot Password?</button></div>
+      <button class="primary full" type="submit">Sign in</button>
+    </form>
+    <p id="loginError" class="error" role="alert"></p>
+    <p class="login-register">Don't have an account? <button id="registerBtn" class="text-link" type="button">Register</button></p>
+  </div>
+</div>
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="side-brand"><img class="brand-mark small" src="xavery_logo.jpg" alt="Xavery logo"><div><b>Xavery</b><small>SmartInventory</small></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <button class="nav admin-only active" data-page="dashboard">▦ <span>Dashboard</span></button>
+    <button class="nav admin-only" data-page="inventory">▤ <span>Inventory</span></button>
+    <button class="nav admin-only" data-page="stickers">▧ <span>Sticker Labels</span></button>
+    <button class="nav sales-only" data-page="pos">🛒 <span>Point of Sale</span></button>
+    <button class="nav staff-only" data-page="attendance">◷ <span>Time Clock</span></button>
+    <button class="nav admin-only" data-page="movements">↔ <span>Stock Movements</span></button>
+    <button class="nav admin-only" data-page="reports">▥ <span>Reports</span></button>
+    <button class="nav admin-only" data-page="prices">₱ <span>Price Management</span></button>
+    <button class="nav admin-only" data-page="analytics">▥ <span>Analytics</span></button>
+    <button class="nav admin-only" data-page="users">♙ <span>Users</span></button>
+    <div class="sidebar-bottom"><div class="user-chip"><div class="avatar" id="userAvatar">A</div><div class="user-info"><b id="sideUser">Admin</b><small id="sideRole">Administrator</small></div></div><button id="logoutBtn" class="logout">↪ Sign out</button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><p class="eyebrow" id="pageEyebrow">OVERVIEW</p><h2 id="pageTitle">Dashboard</h2></div><div class="top-actions"><span class="live-dot"></span><span class="muted">Inventory workspace</span><button id="topAddBtn" class="primary">＋ Add part</button></div></header>
+    <section id="pageContent"></section>
+    <footer> Xavery SmartInventory <span>•</span> Motorcycle parts inventory monitoring</footer>
+  </main>
+</div>
+<div id="modalRoot"></div>
+<div id="toast" class="toast" role="status"></div>
+<div id="stickerPrintArea"></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-functions-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body></html>

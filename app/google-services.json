@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "891735732206",
+    "project_id": "xsi-smartinventory",
+    "storage_bucket": "xsi-smartinventory.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891735732206:android:ddb18b869523c8e1a868ff",
+        "android_client_info": {
+          "package_name": "com.xsi.inventory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAptCNwTbHoRe5R1kgc6-jIYosrN1_fXw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

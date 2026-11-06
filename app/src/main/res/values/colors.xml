@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_blue">#1E67A9</color>
+    <color name="primary_dark">#1267AA</color>
+    <color name="brand_red">#B22222</color>
+    <color name="app_background">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#151515</color>
+    <color name="text_secondary">#777777</color>
+    <color name="border_color">#D5D5D5</color>
+    <color name="divider_color">#EEEEEE</color>
+    <color name="button_text_color">#FFFFFF</color>
 </resources>

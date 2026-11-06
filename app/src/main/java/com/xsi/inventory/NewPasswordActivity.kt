@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -22,6 +23,14 @@ class NewPasswordActivity : AppCompatActivity() {
 
         val updatePasswordButton =
             findViewById<Button>(R.id.updatePasswordButton)
+
+        findViewById<ImageView>(R.id.xaveryLogo)?.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            }
+            startActivity(intent)
+            finish()
+        }
 
         updatePasswordButton.setOnClickListener {
 

@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">XSI Inventory System</string>
+    <string name="app_name">Xavery Inventory</string>
+    <string name="default_role">Inventory Manager</string>
+    <string name="default_company">Motorparts PH</string>
+    <string name="sample_product_name">Quick Throttle X2</string>
+    <string name="sku_format">SKU: %1$s</string>
+    <string name="stock_units_format">Stock: %1$d units</string>
+    <string name="sample_price">₱28.00</string>
+    <string name="active_alerts_count">%1$d active</string>
 </resources>
