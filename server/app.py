@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 from ultralytics import YOLO
 import os
+import torch
+
+torch.set_num_threads(1)
 
 app = Flask(__name__)
 
@@ -28,7 +31,9 @@ def predict():
     file.save(img_path)
 
     # Run YOLO prediction on the uploaded image
-    results = model(img_path)
+    import torch
+    with torch.no_grad():
+        results = model(img_path, device='cpu', verbose=False)
 
     # Extract detection results
     detections = []
@@ -49,4 +54,5 @@ def predict():
     return jsonify({'success': True, 'detections': detections})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)

@@ -7,10 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    // Connected to Flask YOLO inference server.
-    // NOTE: For local testing in Android Emulator, use "http://10.0.2.2:5000/".
-    // For Physical Device, use your PC's local Wi-Fi IP e.g. "http://192.168.254.111:5000/".
-    private const val BASE_URL = "http://192.168.254.111:5000/"
+    // Connected to Flask YOLO inference server on Render.
+    private const val BASE_URL = "https://xavery-inventory-ai.onrender.com"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
